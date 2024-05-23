@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+        #box1{
+            width:500px;
+            height:100px;
+            border:2px solid black;
+            background:aquamarine}
+        #box2{
+            width:50px;
+            height:50px;
+            background:pink;
+    
+                                            /*margin-top은 윗쪽 여백으로 간격을 벌릴때 사용. 여백의 크기를 늘리는것이기 때문에 전체크기 영향이 있다.*/
+        }                                   /*padding 은 본인 크기를 키우는것 margin은 본인이 아닌 여백의 크기를 키우는것*/
+
+        #box3{
+            width:800px;                    /* 800 = 패딩+테두리굵기+콘텐츠(파란색영역)*/
+            box-sizing: border-box;         /*해당 태그의 너비 = 패딩+테두리+콘텐츠(파란색 영역)*/
+            margin-left:40px;
+            padding-top:20px;
+        }
+        #box4{
+            box-sizing:border-box;
+            padding-left:40px;
+        }
+        #content{
+            box-sizing: border-box;
+            padding:40px;
+            width:700px;
+            background:skyblue
+        }
+        #item1{
+            margin-bottom: 30px;
+            height: 100px;
+            background:orange
+    
+        }
+        #item2{
+            height:100px;
+            background:seagreen
+        }
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="box1"></div>   
+    <div id="box3">
+        <div id="box2"></div>
+    </div>
+   <div id="content">
+        <div id="item1"></div>
+        <div id="item2"></div>
+   </div>
+
+
+
+
+</body>
+</html>
