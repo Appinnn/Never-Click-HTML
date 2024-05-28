@@ -1,0 +1,17 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+#big_box{
+    width:1000px;
+    margin:0 auto;
+    position: relative;
+}
+#title_box{
+    width:100%;
+    padding:20px 10px;
+}
+.title{
+    left:10px;
+}
