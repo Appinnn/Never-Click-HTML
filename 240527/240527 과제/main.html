@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0527과제</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+#main{
+    width:1000px;
+    margin:0 auto;
+    padding:0 
+}
+#big_box{
+    width:100%;
+    margin:0;
+    position: relative;
+}
+#title_box{
+    position: relative;
+    width:100%;
+    padding:20px 10px;
+}
+.title{
+    left:10px;
+}
+#blob{
+    width:100%;
+    
+}
+#main_image_box{
+    margin-bottom: 20px;
+}
+.clss{
+    width:40px;
+    height:20px;
+    float: left;
+    margin-right:10px;
+    background:skyblue;
+    border-radius: 10px;
+}
+#sub_title_box{
+    padding-bottom: 20px;
+    width:100%;
+}
+#sub_title_box2{
+    width:100%;
+    padding-top: 30px; 
+    
+}
+.clss:first-child{
+    background:blue;
+}
+#sub_title{
+    font-size:35px;
+    line-height: 1.5;
+}
+#image_box{
+    width:100%;
+    padding-left:30px;
+    
+    
+}
+.image1, .image2, .image3{
+    width:300px;
+    height:300px;
+    float: left;
+    margin-right: 20px; 
+    margin-bottom: 20px; 
+    background-size: cover; 
+    background-position: center;
+    padding-left:20px; 
+}
+ul{
+    list-style-type:none;
+    position: fixed; 
+    left: 200px; 
+    top: 50%; 
+    transform: translateY(-250%);
+    font-size:30px;
+    color: green;
+    background:orange;
+    border-radius: 10px;
+    font-weight: 800;
+    text-align: center; 
+}   
+                                            /* overflow 지정한 크기보다 더 나온 부분을 어떻게 처리 할건가    overflow:hiedden < 감추다 */
+
+</style>
+</head>
+<body>
+    <div id="main">
+        <div id="big_box">
+            <div id="title_box">
+                <div clsss="title"><h1>풀은 지구</h1></div> 
+            </div>
+        </div>
+        <div id="main_img_box">
+            <img src="../240527 과제/image/bigmain2.jpg">
+        </div>
+        <div id="sub_title_box">
+            <div id="blob">
+                <div class="clss"></div>
+                <div class="clss"></div>
+                <div class="clss"></div>
+            </div>
+        <div id="sub_title_box2">  
+            <div id="sub_title">우리의 작은 무관심이<br>풀한포기 없는 지구를 만듭니다.<br>풀은 지구 그 자체입니다.</div> 
+        </div>
+        <div id="image_box">
+            <div class="image1">
+                <img src="../240527 과제/image/image1.jpeg">
+            </div>
+            <div class="image2">
+                <img src="../240527 과제/image/image2.jpeg">
+            </div>
+            <div class="image3">
+                <img src="../240527 과제/image/image3.jpeg">
+            </div>
+        </div>
+        <div id="list">
+            <ul id="ul">
+                <li>지구온난화</li>
+                <li>가뭄</li>
+                <li>기아발생</li>
+                <li>황폐화</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>
