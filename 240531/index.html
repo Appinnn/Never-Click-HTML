@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript">
+
+    //변수 - 데이터가 저장된, 저장될수 있는 메모리(ram)공간//
+        
+        document.write("나는 자바 스크립트 입니다.");
+        num=10;
+        넘버=10;
+        멈버=11;
+
+        // document.write(넘버);
+        // document.write(멈버);
+        // document.write(num);
+
+        num=100;
+        document.write('<br>');
+        document.write(num*5);
+        //사각형의 너비는 45이고 높이는 15일경우 넓이는 얼마인가?
+        width=45;
+        height=30;
+
+        document.write('<br>');
+        document.write('사각형의 비는');
+        document.write(width);
+        document.write('높이는'+ height); //"높이는 15" 라는 문자열로 합쳐진다.
+        document.write('<br>');
+        document.write('넓이는'+width*height);
+  
+        kor=89;
+        eng=94;
+        mat=78;
+        document.write('<hr>');
+        document.write('국어 : ' + kor);
+        document.write('영어 : ' +eng);
+        document.write('수학 : ' +mat);
+        document.write('<br>');
+        document.write('총점 : ' +(kor+eng+mat)+'점');
+        
+
+
+           //국어:89 , 영어:94 , 수학:78
+       //총점 : 261점
+       document.write('<hr>');
+
+       // 커피 총 주문금액과 수박주스 총 주문금액 출력
+       // 음료 총 주문금액 출력
+       커피주문=3;
+       수박주스주문=4;
+       아메리카노=1500;
+       수박주스=2000;
+       document.write('수박주스의 금액은' + 수박주스 +'원 이며 총' +(수박주스*수박주스주문)+'원');
+       document.write('<br>')
+       document.write('아메리카노의 금액은'+아메리카노 +'원 이며 총'+(아메리카노*커피주문)+'원'+'<br>');
+       document.write('총 금액은' +(수박주스*수박주스주문+아메리카노*커피주문)+' 원 입니다.')
+
+       //변수의 이해
+       redCup=10;
+       blueCup=20;
+       whiteCup=0;
+
+       whiteCup=redCup;
+       redCup=blueCup;
+       blueCup=whiteCup;
+
+       //데이터 입력 방법 1.
+       // prompt를 통해서 데이터를 입력할 수 있다.
+       // prompt로 입력한 데이터는 문자열이다.
+       // 숫자로 계산하려면 숫자로 강제 변환을 해야 한다.
+       // 숫자로 변환이 가능한 문자열 만 할 수 있다.
+       // "50" <<오십이라고 읽지 않고 오,영 이라고 한다(문자열 이기때문)
+       // parseInt (문자열) -> 정수로 변환 , "50aaa" -> 50
+       // parseFloat(문자열) -> 실수로 변환
+       // Number(문자열) -> 숫자로 변환,문자열에 단 하나의 문자도 있으면 안된다.
+
+
+       //total=kor+mat+eng;
+       //kor = parseInt(prompt('국어점수') );
+       //mat = parseInt(prompt('수학점수') );
+      // eng= Number(prompt('영어점수') );
+       //document.write( "<br> 국어점수 :" + kor + '수학점수 : ' + mat + '영어점수 : ' + eng);
+       //document.write( '<br> 총점 :' + total );
+
+       //실습 3.
+       //이름과 거주 도시명, 생년월일을 입력하며 출력하세요.
+       document.write('<hr>');
+
+
+       name=(prompt('이름을 입력하세요'));
+       city=(prompt('거주도시를 입력하세요'));
+       birthday=(prompt('생년월일을 입력하세요'));
+
+       document.write('귀하의 개인정보는' +'<br>')
+       document.write('<br>'+'이름 :'+ name);
+       document.write('<br>' +'거주지 :'+ city);
+       document.write('<br>'+'생년월일 :' +birthday);
+
+
+       /* 카멜케이스(표기법) - 첫글자는 소문자시작, 두번째단어부터 대문자 표기
+                    blueCup, mayName , iAmSpiderMan
+            (일반 변수명, 함수명,  메서드 명) 등등등
+
+          스네이크케이스 - 모든 단어를 소문자로 작성하고 단어 사이에 _를 넣는다.
+                    blue_cup, my_name, i_am_spider_man
+            (데이터베이스 테이블명, 테이블의 컬럼명)
+
+          파스칼케이스 - 모든 단어를 띄어쓰기 없이 대문자로 시작
+                    BlueCup, MyName, IAmSpiderMan
+            (클래스명, 인터페이스명)
+          케밥케이스 - 모든 단어를 소문자로 작성하고 단어사이에 - 를 넣는다.
+                    blue-cup, my-name, i-am-spider-man
+            (HTML태그의 ID, CLASS)
+          헝가리언 표기법 - 이름에 목적이나 타입을 접두사로 기재
+                    blueInt, Blue_int, blue-int, BlueInt, myNameString, my_name_string
+            
+            상수 명 -> 모두 대문자
+        */
+    
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+
+
+
+</body>
+</html>
