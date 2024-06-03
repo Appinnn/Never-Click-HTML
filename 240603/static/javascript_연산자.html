@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+
+/*
+    *연산자 종류*
+    산술 연산자 => - +, -, *, /, %
+    대입 연산자 => = (오른쪽에 있는 값을 왼쪽에 저장한다.)
+    증감 연산자 => ++, -- (1증가 , 1감소)
+    비교 연산자 => > , < , >= , <= , == , === , !=
+    논리 연산자 => && (and), || (or), ! (not)
+    조건 연산자(삼항 연산자) => (비교식) ? 참 : 거짓;
+    
+    !연산자 사용시 주의 사항!
+        연산자 우선순위를 생각하고 식을 만들어야 한다.
+
+        
+// */  
+//     //console.log(출력 내용)
+//     //산술 연산자 : +, -, *, /(나눈 후 몫 값), %(나눈 후 나머지 값)
+//     //ex)
+//     num1=17;
+//     num2=4;
+//     console.log(num1 + num2);
+//     console.log(num1 - num2);
+//     console.log(num1 * num2);
+//     console.log(num1 / num2);
+//     console.log(num1 % num2);
+
+//     //증감 연산자 : ++, --
+//     add1=10;
+//     add1++; //add1++1 = add1 + 1;
+//     console.log(add1);
+//     down1=10;
+//     down1--; //down1-- = down1 -1;
+//     console.log(down1);
+
+//     add2=10;
+//     console.log(add2++);
+//     console.log(add2);
+//     add3=10;
+//     result=add3;
+//     console.log(result);
+
+//     add4=10;
+//     console.log(++add4);
+//     //변수 앞에 증감 연산자가 붙어야 대부분 먼저 동작(대입 연산자보다 우선 순위가 높아진다).
+//         // = 변수 앞에 붙을경우 대입연산자(=)보다 우선 순위가 낮아 출력이 늦게 됨 
+
+//     //비교 연산자
+//     //대소비교 연산자 : >, <, >=, <=
+//     //등가비교 연산자 : ==, ===, !=
+
+//     console.log(10 > 5);
+//     console.log(10<5);
+//     num1=15;
+//     num2=23;
+
+//     //바이킹을 타는데 키가 150cm 이상민 탈 수 있다.
+//     console.log(num1>num2);
+//     console.log(num1>= num2);
+//     console.log(num1<=num2);
+
+    // tall=Number(prompt('당신의 키는 : '));
+    // console.log('true면 탑승가능','false면 탑승불가');
+    // console.log(tall >= 150);
+
+    //신입개발자의 초봉 평균은 3100이다.
+    //당신의 현재 연봉이 평균이상인가?
+    //연봉을 입력하여 출력
+    //document.write로 출력
+    //'true'면 평균 이상이고, false면 평균 이하이다.
+
+    // 연봉=parseInt(prompt('내연봉은?'));
+    // document.write(연봉 >= 3100);
+    // document.write('<br>'+ 'true면 평균이상, false면 평균미만');
+
+    //아메리카노 금액 : 2000원
+    //인원 5명
+    // 내 계좌 잔액이 얼마인지 입력 받기 (prompt)로 입력받으세요
+    //5명의 아메리카노를 구매 할 수 있는가? 없는가?
+    //document.wirte로 출력
+
+    /*잔액=parseInt(prompt ('내 계좌 잔액은?'));
+    document.write('아메리카노 :2000원' + '<br>'+' 현재 인원: 5명');
+    document.write('<br>'+'현재 고객님의 계좌 잔액은: '+ 잔액 +'  입니다.'+'<br>'+'<br>');
+    document.write(잔액>=10000);
+    document.write('<br>'+'<br>'+'true일 경우 내가 5명의 커피를 구매 가능, false 일 경우 구매 불가능');
+    */
+
+    // 아메리카노 = 2000;
+    // 인원=5;
+    // 내계좌 =Number(prompt('내 통장 잔액은 얼마?'));
+    // document.wirte('구매가능? :'+(아메리카노*인원<=내계좌));
+
+    //등가비교 연산자 : ==동등연산자(같다), ===일치연산자(같다), !=(같지 않다)    (각자 비교 연산 조건에 부합해야 true가 나옴)
+                    //( == 는 데이터 종류를 상관하지 않고 비교한다.->자동으로 데이터 종류를 맞춰줌)
+                    //( ===는 데이터 종류를 상관하며 비교한다. -> 데이터에 값과 종류가 같아야지 true)
+    // console.log(10==10);
+    // console.log(10!=10);
+
+    // console.log('10'===10);
+
+    // console.log('이순신' =='이순신');
+    // name1='김유신';
+    // name2='김유신 ';
+    // console.log(name1.trim()===name2.trim());
+    // //변수.trim()      -> 문자열 양쪽 끝의 공백 제거
+    // //변수.trimStart() -> 문자열의 앞쪽 공백 제거
+    // //변수.trimEnd()   -> 문자열의 뒤쪽 공백 제거
+
+    // word1='abcd';
+    // word2='ABcd';
+    // console.log('영어 대소문자가 다르다면'+ (word1===word2));
+    // console.log(word1.toLowerCase()===word2.toLowerCase());
+
+    // //변수.toLowerCase() -> 모든 영어문자를 소문자로 변환
+    // //변수.toUpperCase() -> 모든 영어문자를 대문자로 변환
+
+
+    //조건 연산자 : 주어진 조건식(비교 연산자로 만들어진 식, 결과가 참또는 거짓을 비교하여
+                                //결과가 참이냐 거짓이냐에 따라서 다음 실행할 코드를 설정 할 수 있다)
+    
+    // age=25;
+    // (age>=30) ? document.wirte('30살 넘었다.') : document.write('떡국 더 먹고와라');
+    
+    // score=58;
+    // 결과 = (score>=60) ? '합격' : '불합격';
+    // document.write('<br><br>'+ 결과);
+
+    // //바이킹을 탑승하려면 키가 135cm 이상이여야 한다.
+    // tall=Number(prompt('당신의 키는?'));
+    // result=(tall>=135) ? ' 탑승 가능':' 탑승 불가능';
+    // document.write('<br><br>탑승여부 : '+ result);
+
+    //하루에 총걸음수가 6000보를 넘으면 포인트 점수 10점을 받을수 있다.
+    //이 사람의 오늘 걸음수를 입력하여 현재 포인트가 몇점인지 출력하세요.
+
+    // userPoint=435; //현재 포인트 점수 435점
+    // step=Number(prompt('오늘 총 몇 걸음?'));
+    // addPoint=(step>6000) ? 10 : 0;
+    // userPoint=userPoint+addPoint;
+
+    // document.write('현재 포인트 : ' + userPoint);
+
+    //두 정수를 입력 받아 두 정수중 큰수 출력
+    // number1=Number(prompt('정수를 입력하세요'));
+    // number2=Number(prompt('또 다른 정수를 입력하세요'));
+    // bignumber=(number1>number2) ? number1 : 0;
+    // bignumber2=(number1<number2) ? 0 : number2;
+    // bignumber===bignumber2;
+
+    // document.write('더 큰 정수의 값' +bignumber1);
+
+    // num1=Number(prompt('첫번째 정수'));
+    // num2=Number(prompt('두번째 정수'));
+    // result=(num1>num2) ? num1 : num2;
+    // document.write('큰수 : ' +result);
+
+
+    //두 정수를 입력받아 두 정수의 합이 21이라면 블랙잭, 아니라면 합을 출력
+    // num1=Number(prompt('첫번째 정수를 입력하세요'));
+    // num2=Number(prompt('두번째 정수를 입력하세요'));
+    // total=(num1+num2);
+    // result=(total==21) ? '블랙잭' : total;
+    // document.write('두 정수의 합: ' + result);
+
+    // num1=Math.floor(Math.random()*45)+1;
+    // console.log (num1);
+
+    // card1=Math.floor(Math.random() *11) + 1;
+    // card2=Math.floor(Math.random()*11)+1;
+    // card3=0;
+
+    // card3=((card1+card2) <=14) ? Math.floor(Math.random()*11)+1 : 0;
+
+    // document.write('나의 카드: '+card1+ ','+card2+','+card3+'<br>');
+    // document.write('합 : '+ (card1+card2+card3));
+
+    //랜덤 함수를 사용하여(1~50)중의 숫자 두개를 받으세요.
+    //숫자 두개의 곱하기 값이 1200 이상일경우 '큰수' 아닐경우 '작은수' 라고 출력하세요.
+
+    num1=Math.floor(Math.random()*50)+1;
+    num2=Math.floor(Math.random()*50)+1;
+    num3=(num1*num2);
+    document.write('<br>'+'첫번째 정수 : '+num1);
+    document.write('<br>'+'두번째 정수 : '+num2); 
+    document.write('<br>'+'두 정수를 곱한 값 : '+num3); 
+    num4=(num3>=1200) ? '1200 보다 큰수' : '1200 보다 작은수';
+    document.write('<br>'+num4);
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>
