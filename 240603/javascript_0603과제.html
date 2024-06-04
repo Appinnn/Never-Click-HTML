@@ -31,7 +31,7 @@ document.write('1잔에 2분씩 줄어드는 수명으로 인해 총 ' + sojuMin
 document.write('<br>'+'총 ' + sojuHour + ' 시간 단축.');
 document.write('<br>'+'총 ' + sojuDays + ' 일 단축되었습니다.');
     
-
+20
 
 //과제 2.
 //두개의 주사위를 던져서 같은 값이 나온다면 당첨, 아니라면 꽝 출력.
@@ -39,7 +39,7 @@ document.write('<br>'+'총 ' + sojuDays + ' 일 단축되었습니다.');
 
     dice1=Math.floor(Math.random()*6)+1;
     dice2=Math.floor(Math.random()*6)+1;
-    result=dice1===dice2 ? '당첨':'꽝';
+    result= (dice1===dice2) ? '당첨':'꽝';
 
     console.log=(`${dice1},${dice2}`);
     document.write('<br><br><br>'+`첫번째 주사위 : ${dice1}, 두번째 주사위 : ${dice2}<br>`);
