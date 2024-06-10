@@ -50,6 +50,33 @@
 //     i++;
 // }
 
+
+//////// 해답)
+        // for(var i=1; i<=100; i++)
+        // {
+        //     if(i%3==0 && i%8==0)
+        //     {
+        //         document.write(`3,8배 <br>`);
+        //     }
+        //     else if(i%3==0)
+        //     {   
+        //         document.write(`3배 <br>`);
+        //     }
+        //     else if(i%8==0)
+        //     {
+        //         document.write(`8배 <br>`);
+        //     }
+        //     else
+        //     {
+        //         document.write(` ${i} <br>`);
+        //     }
+        // }
+
+
+
+
+
+
         //문제 2.
         // 네개 숫자로 이루어진 비밀번호 찾기
         // 각각의 숫자는 1~9 중 하나이다.
@@ -146,6 +173,73 @@
         //     }
 
         // }
+
+        ////////해답
+
+        //두번째 방법
+
+        // var stop=true;
+        // for(var a=1; a<=9 && stop; a++)
+        // {
+        //     for ( var b=1; b<=9 && stop; b++)
+        //     {
+        //         for ( var c=1; c<=9 && stop; c++)
+        //         {
+        //             for( var d=1; d<=9 && stop; d++)
+        //             {
+        //                 if(a!=b && a!=c && a!=d && b!=c && b!=d && c!=d)
+        //                 {
+        //                     if(a==d+2)
+        //                     {
+        //                         if(b<c)
+        //                         {
+        //                             var password= (a*1000) +(b*100) +(c*10) +d;
+        //                             var rev= (d*1000) +(c*100) +(b*10) +a;
+        //                             if((password + rev) == 16456)
+        //                             {
+        //                                 document.write(`비밀번호 : ${password}`);
+                                            
+        //                             }
+        //                         }
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+
+            //두번째 방법
+
+        for(var a=1; a<=9; a++)
+        {
+            for ( var b=1; b<=9; b++)
+            {
+                for ( var c=1; c<=9; c++)
+                {
+                    for( var d=1; d<=9 ; d++)
+                    {
+                        if(a!=b && a!=c && a!=d && b!=c && b!=d && c!=d)
+                        {
+                            if(a==d+2)
+                            {
+                                if(b<c)
+                                {
+                                    var password= (a*1000) +(b*100) +(c*10) +d;
+                                    var rev= (d*1000) +(c*100) +(b*10) +a;
+                                    if((password + rev) == 16456)
+                                    {
+                                        document.write(`비밀번호 : ${password}`);
+                                        return; // 함수의 종료를 의미하는 예약어이다.
+                                            
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
 
 
 
