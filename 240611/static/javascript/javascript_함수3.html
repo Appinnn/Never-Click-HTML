@@ -1,0 +1,194 @@
+<!-- javascript_함수3.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+
+<script>
+
+   // 함수 형태 
+   /* 1. 매개변수와 반환값이 없는 함수
+           function eat(){
+               document.write("나는 샌드위치 먹었다");
+           }
+       2. 매개변수는 있고  반환값은 없는 함수
+           function eat( food ){
+               document.write("나는 "+food+ " 먹었다.");
+           }
+       3. 매개변수는 없고 반환값이 있는 함수
+           function pickFood(){
+               var food = "청국장";
+               return food; // 반환
+           }
+       4. 매개변수있고 반환값도 있는 함수
+           function eat( food ){  //매개변수
+               var str = "나는 " + food + " 먹었다";
+               return str; // 반환
+           }
+   
+       반환이 무엇이냐!!  
+       return 이라고 한다. 
+       함수가 호출 된 위치에 값을 되돌려 놓는 방법
+       함수에 의해 생성된 데이터를 외부로 보내는 방법 - return
+       함수에 필요한 데이터를 외부에서 가져오는 방법 - 매개변수
+
+       var ment = eat('냉면');
+   
+       함수는 기능(목적)을 정하고 정의해야한다.
+       함수의 기능을 벗어나는 코드 작성은  프로그램동작의 결함,장애 가 될수 있다.
+
+       자동차 - 
+       자전거  체인
+   */
+
+   // function total(){
+   //     var kor=90;
+   //     var mat=80;
+   //     var eng=60;
+   //     var tot = kor+mat+eng;
+   //     document.write( tot );
+   // }
+
+   // var scoreTotal = total();
+   // document.write( scoreTotal );
+
+
+
+   window.onload = function()
+    { //onload는 브라우저에 화면 표시가 끝나면 발생하는 이벤트이다.
+    // html 문서의 모든 리소스 (html,css,javascript, 이미지 등등)가 브라우저에 완전히
+    // 로드 되면 발생하는 이벤트이다. - window.onload
+    // onload는 태그에서 발생한다. img, iframe, script, link, video 등등
+        
+        // document.getElementById('power').addEventListener('click', function(){});
+
+        document.getElementById('power').addEventListener('click', function(){
+            buttonPress('전원');
+        });
+
+        document.querySelector('#increase').addEventListener('click', function(){
+            buttonPress('온도증가');
+        });
+        document.querySelector('#reduction').addEventListener('click', function(){
+            buttonPress('온도감소');
+        });
+        document.querySelector('#driving').addEventListener('click', function(){
+            buttonPress('운전선택');
+            
+        });
+    }
+
+// var - 코드블럭 ( { } ) 영역은 함수이다.
+// let - 코드블럭 ( { } ) 영역은 변수가 선언된 영역
+
+    let onoff=true; //전역변수
+    let temp=0;     //전역변수
+    let 운전=1;     //전역 변수 - 1냉방,2자동,3제습,4난방,5송풍
+    let 동작='냉방';
+    
+    function buttonPress( target )  //버튼을 눌렀다, 버튼에 맞는 함수 실행, 
+                                    //버튼 동작에 따라 화면에 표시
+    {      
+
+       
+    
+        if ( target === '전원'){
+            power(); // power함수 호출 - 전원 on off
+        }
+        else if ( target ==='온도증가'){
+            temp = tempUpDown(1);
+        }
+        else if ( target ==='온도감소'){
+            temp = tempUpDown(-1);
+        }
+        else if ( target === '운전선택'){
+            동작 = driveSelect();
+        function driveSelect(){
+            // 냉방, 자동, 제습, 난방, 송풍 순으로 변하도록 동작시킨다.
+            운전++;
+            if(운전>5) 운전=1;
+            switch(운전)
+            {
+                case 1: return '냉방';
+                case 2: return '자동';
+                case 3: return '제습';
+                case 4: return '난방';
+                case 5: return '송풍';
+            }
+        }
+    }
+
+        document.getElementById('temp').innerText=temp;
+        document.querySelector('#mode').innerText=동작;
+        document.querySelector('#strength').innerText=1;
+        
+}
+        {
+            function tempUpDown(step)  // 온도 증가+감소, step 매개변수에 따라 증가하거나 감소
+            {
+                var nowTemp = Number(document.querySelector('#temp').innerText);
+                return (nowTemp + step); // tempUpDown 에서 생성된 데이터를 buttonPress에서
+                                        // 사용하기위해 return 한다.
+            }
+        }
+
+
+    function power(){ //전원을 on , off 해주는 기능 함수
+        if(onoff)
+        {
+        document.querySelector('#lcd').style.display='none';
+        onoff=false;
+        }
+        else
+        {
+        document.querySelector('#lcd').style.display='block';
+        onoff=true;
+        }
+    }
+
+    
+
+</script>
+
+</head>
+<body>
+    <div id="lcd">
+        <label>온도</label> <b id="temp">25</b> <br>
+        <label>운전</label> <b id="mode">냉방</b> <br>
+        <label>세기</label> <b id="strength">1</b> <br>
+    </div>
+   
+   <div id="wrap">
+       <div id="power"     class="bt">전원</div>
+       <div id="increase"  class="bt">온도▲</div>
+       <div id="driving"   class="bt">운전선택</div>
+       <div id="indirect"  class="bt">간접바람</div>
+       <div id="reduction" class="bt">온도▼</div>
+       <div id="wind"      class="bt">바람세기</div>
+   </div>
+<style>
+#wrap{
+   margin:0 auto;
+   width:500px;
+   display:flex;
+   flex-wrap: wrap;
+   gap:10px;
+}
+.bt{
+   box-sizing: border-box;
+   width:160px; line-height:200px;
+   border:1px solid black;
+   text-align: center;
+   font-size:30px;
+   cursor: pointer;
+}
+.bt:first-child{background-color: red; color:white;}
+.bt:nth-child(2), .bt:nth-child(5){ background-color: yellow;}
+.bt:nth-child(3),.bt:nth-child(4){background:green; color:white;}
+
+</style>
+
+</body>
+</html>
