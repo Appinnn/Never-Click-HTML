@@ -32,6 +32,9 @@ function bingoCheck()
 
     //클릭한 td에 표시된 숫자를 배열에서 0으로 변경
     // 배열에 0이 저장된곳은 클릭한 숫자 이다.
+    var idx = $('.num').index(this); //클릭한 td가 몇번째 인덱스 인가?
+    bingo[idx]=0; //해당 td위치와 같은 bingo배열에 0으로 변경
+    //4번째 td를 클릭하면 idx는 3이고 bingo[3] =0으로 변경하겠다는 내용
 }
 
 function start()
