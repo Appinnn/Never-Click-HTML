@@ -35,6 +35,58 @@ function bingoCheck()
     var idx = $('.num').index(this); //클릭한 td가 몇번째 인덱스 인가?
     bingo[idx]=0; //해당 td위치와 같은 bingo배열에 0으로 변경
     //4번째 td를 클릭하면 idx는 3이고 bingo[3] =0으로 변경하겠다는 내용
+
+    console.log( bingo );
+
+    var 가로 = 0;
+    var end = 0;
+    var 세로 = 0;
+    var 대각선1 = 0;
+    var 대각선2 = 0;
+
+
+
+    for( var i=0; i<5; i++ )
+        {
+            for( var k=0; k<5; k++ )
+                {
+                    if( bingo[i*5+k] == 0) 가로++;
+                    if( bingo[k*5+i] == 0) 세로++;
+                }
+            if ( bingo[i*6]==0 ) 대각선1++;
+            if ( bingo[i*4+4]==0 ) 대각선2++;
+            
+            if( 대각선1==5 ) end++;
+            if( 대각선2==5 ) end++;
+            if( 가로==5 ) end++;
+            if( 세로==5 ) end++;
+
+            가로 = 0;
+            세로 = 0;
+        }
+
+        endCount = end;
+        $('#ok').text( endCount );  
+
+        if( endCount==5 )
+        {
+            alert('빙고 완성!');
+            endGame();
+        }
+        else if( endCount>5 ) 
+        {
+            alert('게임 오버 !');
+            endGame();
+        }
+}
+
+function endGame()
+{
+    $('.num').off(); //모든 이벤트 제거   (on으로 이벤트를 시작했기 때문 ex)onClick) -
+                    // off('click'); -> 특정 이벤트 제거
+
+    //플레이 타임 멈추기
+    clearInterval( time ); //특정 setInterval 을 종료시키기
 }
 
 function start()
@@ -70,7 +122,7 @@ function init() //25개 숫자 배열에 저장
 {
     while(bingo.length != 25)
         {
-                var tmp = Math.floor(Math.random() *50)+1;
+                var tmp = Math.floor(Math.random() *100)+1;
                 if(bingo.indexOf( tmp ) == -1)
                 {
                     bingo.push( tmp );
