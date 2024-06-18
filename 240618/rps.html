@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="./static/javascript/rps.js"></script>
+    <link rel="stylesheet" href="./static/css/rps.css">
+
+
+
+
+
+
+
+
+</head>
+<body>
+    <!--vs 이미지가 있다면 여기에 주석 있는 자리에 넣기-->
+    <img id="vs" src="./static/image/tekken-get-ready.gif">
+
+    <div id="buttonWrap">
+        <button id="game">게임시작</button>
+        <button id="record">전적보기</button>
+    </div>
+
+    <div id="wrap">
+        <div id="comArea" class="area">
+            <div class="rpsImg">
+                <img id="comImg">
+            </div>
+        </div>
+        <div id="userArea" class="area">
+            <div class="rpsImg">
+                <div class="userImg"><img src="./static/image/scissors.png" alt=""></div>
+                <div class="userImg"><img src="./static/image/rock.png" alt=""></div>
+                <div class="userImg"><img src="./static/image/paper.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal">
+        <div id="modalBackground"></div>
+        <div id="modalData">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th class="user">유저</th>
+                        <th class="com">컴퓨터</th>
+                        <th class="outcome">결과</th>
+                    </tr>
+                </thead>
+                <tbody id="data"></tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

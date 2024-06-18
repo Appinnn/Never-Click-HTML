@@ -61,49 +61,37 @@ $(document).keyup(function( event ){
     var key = event.keyCode;
   //  alert( typeof key);
 
+  //이동할 위치 표현변수
+  var stepx = x , stepy = y;
+
+  
+    board[y][x]=0;
+        $("td").eq(y*21+x).removeClass("me");
+        $("td").eq(y*21+x).addClass("blank"); 
+
     switch(key){
-        case 87: 
-            board[y][x]=0;
-            $("td").eq(y*21+x).removeClass("me");
-            $("td").eq(y*21+x).addClass("blank");  //현재 위치에 클래스명 blank 로변경
-            y--;
-            board[y][x]=2;
-            $("td").eq(y*21+x).removeClass("blank");
-            $("td").eq(y*21+x).addClass("me");// 이동할 위치에 클래스명 me로 변경
+        case 87:
+            stepy--;
             break;
         case 65:
-        board[y][x]=0;
-            $("td").eq(y*21+x).removeClass("me");
-            $("td").eq(y*21+x).addClass("blank");  
-            x--;
-            board[y][x]=2;
-            $("td").eq(y*21+x).removeClass("blank");
-            $("td").eq(y*21+x).addClass("me");
+            stepx--;
             break;
         case 83:
-            board[y][x]=0;
-            $("td").eq(y*21+x).removeClass("me");
-            $("td").eq(y*21+x).addClass("blank");  
-            y++;
-            board[y][x]=2;
-            $("td").eq(y*21+x).removeClass("blank");
-            $("td").eq(y*21+x).addClass("me");
+            stepy++;
             break;
         case 68:
-        board[y][x]=0;
-            $("td").eq(y*21+x).removeClass("me");
-            $("td").eq(y*21+x).addClass("blank");  
-            x++;
-            board[y][x]=2;
-            $("td").eq(y*21+x).removeClass("blank");
-            $("td").eq(y*21+x).addClass("me");
+            stepx++;
             break;
-        if(me<1)
-        {
-        alert('이동할 수 없는 곳입니다.');
-        }
+        
     }
-
+    if( board[stepy][stepx] != 1)
+    {
+        x = stepx;
+        y = stepy;
+    }
+    board[y][x]=2;
+        $("td").eq(y*21+x).removeClass("blank");
+        $("td").eq(y*21+x).addClass("me");
 });
 
 </script>
